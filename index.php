@@ -1,15 +1,26 @@
+<?php
+   $resultado = (200*546)/2
+
+   
+
+   ?>
+
+
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
+
 
     <title>Mi título de página 6 </title>
     <link rel="stylesheet" href="css/layout.css">
   </head>
   <body>
 
-   <h1>Header</h1>
+   <h1>Header <?= $resultado ?> </h1>
 
+   
    <img src="imagenes/increibles.png" width="100px"/>
 
    <ul>
