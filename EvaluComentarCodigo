@@ -1,0 +1,86 @@
+/*Clase para manejar las entradas de un blog.
+ * La clase se modificó el 13/02/2023 por Andrés Penalva González.
+ * Esta es la versión 3.0
+ */
+public class EntradaBlogAPGmain {
+
+        public static class EntradaBlogAPG {
+
+            /*
+            la variable char separador es el caracter que separa ENTRADA DE
+            del nombre del autor
+             */
+
+            public static char separador=':';
+            private int id;
+            private String texto;
+            private String autor;
+
+            /**Constructor de la clase. recibe el número de entrada, el nombre del autor
+            de la entrada y el texto que contiene la entrada. Si el número de entrada
+            es negativo, lanza una excepción
+             */
+	public EntradaBlogAPG(int id, String autor, String texto){
+
+        if(id<=0) throw new IllegalArgumentException("El id no puede ser negativo"); //con esta indicación marcamos que si el ID es <=0
+                                                                                    // saltará un error de Excepcion con ese mensaje
+                this.id=id;
+                this.autor=autor;
+                this.texto=texto;
+            }
+
+            /**
+             * metodo al que se llama para que saque por pantalla toda la cadena
+             * @return cad
+             */
+            @Override
+            public String toString(){
+                String cad="";
+                cad+="\nENTRADA DE"+separador+" "+autor;
+                cad+="\nTexto de"+separador+" "+texto;
+                cad+="\nID de "+autor+separador+" "+id;
+                return cad;
+            }
+
+            /**
+             * metodo que devuelve el nº de ID
+             * @return id
+             */
+            public int getId(){
+                return this.id;
+            }
+
+            /**
+             * metodo que devuelve el texto ingresado
+             * @return texto
+             */
+            public String getTexto(){
+                return this.texto;
+            }
+
+            /**
+             * metodo que devuelve el nombre del autor convertido en mayusculas
+             * @return autor
+             */
+            public String getAutor(){
+                return this.autor.toUpperCase();
+            }
+
+            /**
+             * metodo que devuelve el nombre del autor sin convertirlo en mayusculas
+             * @return autor
+             */
+            public String devuelveAutor(){
+                return this.autor;
+            }
+        }
+
+    /**
+     * este se utiliza si metieramos los argumentos como parámetros
+     * @param args
+     */
+    public static void main(String[] args) {
+            EntradaBlogAPG e1 = new EntradaBlogAPG(5, "Andres", "Arreglados errores de compilación y de ejecución.");
+                System.out.println(e1);
+        }
+    }
